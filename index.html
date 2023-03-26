@@ -1,0 +1,61 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="index.css">
+    <title>Navbar Responsive</title>
+</head>
+<body>  
+        <div class="header">
+            <div class="navbar">
+            <div class="logo"><a href="/"> P<span>N</span></div></a>
+            <ul class="links">
+                <li class="home"><a href="/"> Profile</li></a>
+                <li class="testimonials"><a href="/">Testimonials</li></a>
+                <li class="projects"><a href="/">Projects</li></a>
+                <li class="contacts"><a href="/">Contact</li></a>
+            </ul>
+            <a href="/" class="action-btn">Get Started</a>
+            <div class="toggle_btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="dropdownmenu">
+             <ul class="links">
+                <li class="home"><a href="/"> Profile</li></a>
+                <li class="testimonials"><a href="/">Testimonials</li></a>
+                <li class="projects"><a href="/">Projects</li></a>
+                <li class="contacts"><a href="/">Contact</li></a>
+                <li><a href="/" class="action-btn">Get Started</a></li>
+        </ul>
+        </div>
+        <div class="section" id="main">
+          <h1>  WELCOME</h1>
+          <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. At dolorum sapiente dicta cumque 
+          <br />adipisci autem eligendi! Blanditiis eveniet veniam, nostrum delectus alias recusandae necessitatibus nemo 
+            rem tempore enim repudiandae aperiam.</p>
+        </div>
+
+        </div>
+        <script>
+            const toggleBtn = document.querySelector('.toggle_btn');
+            const toggeBtnIcon = document.querySelector('.toggle_btn i');
+            const dropDownMenu = document.querySelector('.dropdownmenu');
+            toggleBtn.onclick = function () {
+                // classList is the class in html tags, it calls the classes same in html but in js form
+                dropDownMenu.classList.toggle('open');
+                //Create this one so that we could use the if else if the toggle_btn is clicked it will change the icon to 'X' and if its not then it will stay as fa-bars
+               const isClick = dropDownMenu.classList.contains('open');
+
+            toggeBtnIcon.classList = isClick ? 
+            'fa-solid fa-xmark': 'fa-solid fa-bars'
+            } 
+        </script>
+
+</body>
+</html>

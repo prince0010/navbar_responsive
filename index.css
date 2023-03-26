@@ -1,0 +1,178 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body{
+    /* background-image: url('https://img.freepik.com/free-photo/grunge-paint-background_1409-1337.jpg?w=900&t=st=1679862530~exp=1679863130~hmac=fbab0974b955129a4d8ebf5c96cb88e1a026a93290d1fc7f65592ed466d88a7c'); */
+    background-image: radial-gradient(rgb(174, 221, 225), rgba(115, 163, 181, 0.708));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    background-color: #000;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1rem;
+}
+a:hover{
+    color: rgb(255, 187, 91);
+}
+/* HEADER */
+.header{
+    position: relative;
+    padding: 0 2rem;
+}
+.navbar{
+    width: 100%;
+    height: 60px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.navbar .logo a{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .links{
+    display: flex;
+    gap: 2rem;
+    margin-left: 38rem;
+}
+.navbar .toggle_btn{
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: none;
+}
+
+.action-btn{
+    background-color: rgb(255, 187, 91);
+    padding: 0.5rem 1rem;
+    outline: none;
+    border: none;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5rem;
+    transition: scale 0.2 ease;
+}
+.action-btn:hover{
+    scale: 1.10;
+    color: #fff;
+}
+
+.action-btn:active{
+    scale: 0.70;
+}
+
+
+/* MainPage or the Welcome Text */
+.section {
+    /* minus to the -60px of the height of .navbar */
+    height: calc(90vh - 60px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+#main h1{
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+#main h1:hover{
+    color:rgb(255, 187, 91);
+    cursor: pointer;
+}
+#main p{
+    font-size: 1rem;
+    color: black;
+    font-weight: bold;
+}
+/* Drop Down Menu */
+.dropdownmenu{
+    display: none;
+    /* This is for putting the container that contains the lists and action-btn to right side */
+    position: absolute;
+    right: 2rem;
+    top:60px;
+    /* End */
+    height: 0;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(15px);
+    overflow: hidden;   
+    /* For animation if toggle_btn clicked */
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+/* if navbar clicked the dropdownmenu class will add the open class which contains a height:240px 
+in css and add the transition in the dropdownmenu css which is a transition for like dropdown style the lists inside of the dropdownmenu class tag 
+and that is here included in the scriptjs in html, you must not addd spaces in it since it is in the same html tag class and it has the same style that is needed for this  */
+.dropdownmenu.open{
+    height: 240px;
+}
+
+.dropdownmenu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive */
+@media( max-width:1211px){
+    .navbar .links{
+        display: flex;
+        gap: 2rem;
+        margin-left: 20rem;
+    }
+}
+@media (max-width: 817px){
+    #main h1{
+        font-size: 2.4rem;
+    }
+    #main p{
+        font-size: 0.8rem;
+    }
+}
+
+@media(max-width:1017px){
+    .navbar .links,
+    .navbar .action-btn{
+        display: none;
+    }
+    /* This will display the 'none' or hidden // display:block*/
+    .navbar .toggle_btn{
+        display: block;
+    }
+      /* This will display the 'none' or hidden // display:block*/
+    .dropdownmenu{
+        display: block;
+    }
+}
+@media(max-width:576px){
+  
+  .dropdownmenu{
+      left: 2rem;
+      width: unset;
+  }
+
+}
