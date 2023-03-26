@@ -118,6 +118,8 @@ a:hover{
     width: 300px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
+    /* Pampa blur if ever naay pucture sa likod sa container ani, so basically ang picture na matambunan ssa background-color kay ma blur ang pic ato since its transparent, 
+    ang transparent na ma ato na pic is ma blur pud */
     backdrop-filter: blur(15px);
     overflow: hidden;   
     /* For animation if toggle_btn clicked */
